@@ -1,36 +1,65 @@
 function generateCV(){
 
-const name =
-document.getElementById("name").value;
+const name = document.getElementById("name").value;
+const jobTitle = document.getElementById("jobTitle").value;
+const phone = document.getElementById("phone").value;
+const email = document.getElementById("email").value;
+const summary = document.getElementById("summary").value;
+const experience = document.getElementById("experience").value;
+const education = document.getElementById("education").value;
 
-const jobTitle =
-document.getElementById("jobTitle").value;
+const skills = document
+.getElementById("skills")
+.value
+.split("\n")
+.filter(skill => skill.trim() !== "");
 
-const email =
-document.getElementById("email").value;
+const skillList = skills
+.map(skill => `<li>${skill}</li>`)
+.join("");
 
-const phone =
-document.getElementById("phone").value;
+document.getElementById("cv").innerHTML = `
 
-const summary =
-document.getElementById("summary").value;
+<div class="header">
 
-document.getElementById("cvPreview").innerHTML = `
+<div>
+<div class="name">${name}</div>
+<div class="job">${jobTitle}</div>
+</div>
 
-<h1>${name}</h1>
+<div class="contact">
+<div>${phone}</div>
+<div>${email}</div>
+</div>
 
-<h3>${jobTitle}</h3>
+</div>
 
-<p>
-${phone}<br>
-${email}
-</p>
-
-<hr>
-
-<h2>نبذة شخصية</h2>
-
+<div class="section">
+<h2>PERSONAL SUMMARY</h2>
 <p>${summary}</p>
+</div>
+
+<div class="section">
+<h2>WORK EXPERIENCE</h2>
+<p>${experience}</p>
+</div>
+
+<div class="section">
+<h2>SKILLS</h2>
+<ul>
+${skillList}
+</ul>
+</div>
+
+<div class="section">
+<h2>EDUCATION</h2>
+<p>${education}</p>
+</div>
+
+<div class="section">
+<h2>REFERENCES</h2>
+<p>Available Upon Request</p>
+</div>
 
 `;
 
