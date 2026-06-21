@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,87 +8,106 @@
 </head>
 <body>
   <main class="app">
-    <section class="panel form-panel">
-      <h1>منشئ سيرة ذاتية</h1>
+    <aside class="editor">
+      <h1>CV Builder</h1>
 
-      <div class="grid">
-        <label>الاسم الكامل
-          <input id="name" type="text" placeholder="مثال: أحمد الكنيني" />
+      <div class="form-grid">
+        <label>Full Name
+          <input id="fullName" type="text" placeholder="Your Name" />
         </label>
 
-        <label>المسمى الوظيفي
-          <input id="title" type="text" placeholder="مثال: مطور ويب" />
+        <label>Job Title
+          <input id="jobTitle" type="text" placeholder="Job Title" />
         </label>
 
-        <label class="full">الملخص الشخصي
-          <textarea id="summary" rows="4" placeholder="اكتب نبذة قصيرة عنك..."></textarea>
+        <label>Address
+          <input id="address" type="text" placeholder="Dayjob.com, 120 Vyse st Birmingham" />
         </label>
 
-        <label>رقم الهاتف
-          <input id="phone" type="text" placeholder="05xxxxxxxx" />
+        <label>Phone
+          <input id="phone" type="text" placeholder="01234 567890" />
         </label>
 
-        <label>البريد الإلكتروني
-          <input id="email" type="email" placeholder="name@email.com" />
+        <label>Email
+          <input id="email" type="email" placeholder="info@dayjob.com" />
         </label>
 
-        <label>العنوان
-          <input id="location" type="text" placeholder="جدة، السعودية" />
+        <label class="full">Personal Summary
+          <textarea id="summary" rows="5" placeholder="Write a short introduction of just a few paragraphs..."></textarea>
         </label>
 
-        <label class="full">الخبرة
-          <textarea id="experience" rows="4" placeholder="مثال: مطور واجهات - شركة ..."></textarea>
+        <label class="full">Work Experience
+          <textarea id="experience" rows="5" placeholder="Add your work history..."></textarea>
         </label>
 
-        <label class="full">المهارات
-          <textarea id="skills" rows="3" placeholder="HTML, CSS, JavaScript, ..."></textarea>
+        <label class="full">Skills
+          <textarea id="skills" rows="4" placeholder="Add your skills..."></textarea>
         </label>
 
-        <label class="full">التعليم
-          <textarea id="education" rows="3" placeholder="اسم الجهة، الدرجة، السنوات"></textarea>
+        <label class="full">Education
+          <textarea id="education" rows="4" placeholder="Add your education details..."></textarea>
         </label>
       </div>
-    </section>
 
-    <section class="panel preview-panel">
-      <div class="cv">
-        <header class="cv-header">
-          <div>
-            <h2 id="cvName">Your Name</h2>
-            <p id="cvTitle">Job Title</p>
+      <button id="downloadBtn" type="button">Download PDF</button>
+    </aside>
+
+    <section class="preview-wrap">
+      <div class="sheet" id="cv">
+        <div class="top-title">Structure of a CV</div>
+
+        <header class="header">
+          <div class="header-left">
+            <h2 id="pvName">Your Name</h2>
+            <p id="pvTitle">Job Title</p>
           </div>
-          <div class="contact">
-            <p id="cvLocation">Jeddah, Saudi Arabia</p>
-            <p id="cvPhone">T: 05xxxxxxxx</p>
-            <p id="cvEmail">E: name@email.com</p>
+
+          <div class="header-right">
+            <p id="pvAddress">Dayjob.com, 120 Vyse st Birmingham</p>
+            <p>T: <span id="pvPhone">01234 567890</span></p>
+            <p>E: <span id="pvEmail">info@dayjob.com</span></p>
           </div>
         </header>
 
-        <section>
-          <h3>PROFILE</h3>
-          <p id="cvSummary">
-            Write a short introduction about yourself, your strengths, and the role you are seeking.
+        <section class="section">
+          <h3>PERSONAL SUMMARY</h3>
+          <p id="pvSummary">
+            Write a short introduction of just a few paragraphs explaining who you are, your strengths and why you feel you are a suitable candidate. Write it in the third person.
           </p>
         </section>
 
-        <section>
+        <section class="section">
           <h3>WORK EXPERIENCE</h3>
-          <p id="cvExperience">Add your work experience here.</p>
+          <p id="pvExperience">
+            Add details about your role, achievements, and responsibilities.
+          </p>
         </section>
 
-        <section>
+        <section class="section">
           <h3>SKILLS</h3>
-          <p id="cvSkills">Add your professional skills here.</p>
+          <ul id="pvSkills" class="bullets">
+            <li>Concise professional skill statement.</li>
+            <li>Concise professional skill statement.</li>
+            <li>Concise professional skill statement.</li>
+          </ul>
         </section>
 
-        <section>
+        <section class="section">
           <h3>EDUCATION</h3>
-          <p id="cvEducation">Add your education details here.</p>
+          <p id="pvEducation">
+            Subject(s) and grades<br />
+            School/College/University name — Year to Year
+          </p>
+        </section>
+
+        <section class="references">
+          <strong>REFERENCES</strong> — <span id="pvReferences">Available on request</span>
         </section>
       </div>
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
