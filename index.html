@@ -2,41 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CV Builder ATS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CVify</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-<h1>ATS CV Builder</h1>
+<div class="form-panel">
 
-<div class="form-section">
+<h2>CV Builder</h2>
 
-<input type="text" id="name" placeholder="Full Name">
+<input id="name" placeholder="Full Name">
 
-<input type="text" id="jobTitle" placeholder="Job Title">
+<input id="title" placeholder="Job Title">
 
-<input type="text" id="phone" placeholder="Phone">
+<input id="phone" placeholder="Phone">
 
-<input type="email" id="email" placeholder="Email">
+<input id="email" placeholder="Email">
 
-<textarea id="summary" placeholder="Professional Summary"></textarea>
+<textarea id="summary"
+placeholder="Professional Summary"></textarea>
 
-<textarea id="experience" placeholder="Work Experience"></textarea>
-
-<textarea id="skills" placeholder="Skills (one skill per line)"></textarea>
-
-<textarea id="education" placeholder="Education"></textarea>
-
-<button onclick="generateCV()">Generate CV</button>
+<button onclick="generateCV()">
+Generate CV
+</button>
 
 </div>
 
-<div id="cv"></div>
+<div class="preview-panel">
+
+<div id="cv">
+
+<div class="header">
+
+<div>
+<h1>Your Name</h1>
+<p>Job Title</p>
+</div>
+
+<div class="contact">
+<p>Phone</p>
+<p>Email</p>
+</div>
+
+</div>
+
+<hr>
+
+<h3>PERSONAL SUMMARY</h3>
+
+<p>Your summary will appear here...</p>
+
+</div>
+
+</div>
 
 </div>
 
