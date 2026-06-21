@@ -5,55 +5,50 @@ box-sizing:border-box;
 }
 
 body{
-background:#e5e7eb;
+background:#ececec;
 font-family:Arial,sans-serif;
-padding:30px;
+padding:20px;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
+.wrapper{
 display:grid;
 grid-template-columns:350px 1fr;
-gap:30px;
+gap:20px;
 }
 
-.form-section{
-background:white;
+.form-panel{
+background:#fff;
 padding:20px;
-border-radius:12px;
+border-radius:10px;
 }
 
-input,
-textarea{
+.form-panel input,
+.form-panel textarea{
 width:100%;
 padding:12px;
-margin-bottom:12px;
-border:1px solid #ddd;
-border-radius:6px;
+margin-bottom:10px;
 }
 
-textarea{
+.form-panel textarea{
 height:120px;
 }
 
 button{
 width:100%;
 padding:15px;
-border:none;
-background:black;
-color:white;
-font-size:16px;
 cursor:pointer;
-border-radius:8px;
+}
+
+.preview-panel{
+display:flex;
+justify-content:center;
 }
 
 #cv{
-background:white;
+background:#fff;
 width:210mm;
 min-height:297mm;
 padding:35px;
-margin:auto;
 box-shadow:0 0 15px rgba(0,0,0,.15);
 }
 
@@ -63,14 +58,8 @@ justify-content:space-between;
 margin-bottom:30px;
 }
 
-.name{
+.header h1{
 font-size:42px;
-font-weight:bold;
-}
-
-.job{
-font-size:20px;
-margin-top:5px;
 }
 
 .contact{
@@ -78,39 +67,7 @@ text-align:right;
 line-height:1.8;
 }
 
-.section{
-margin-top:25px;
-}
-
-.section h2{
-font-size:22px;
+h3{
+margin-top:20px;
 margin-bottom:10px;
-padding-bottom:5px;
-border-bottom:2px solid #000;
-}
-
-.section p{
-line-height:1.8;
-}
-
-ul{
-padding-left:20px;
-margin-top:10px;
-}
-
-li{
-margin-bottom:6px;
-}
-
-@media(max-width:1100px){
-
-.container{
-grid-template-columns:1fr;
-}
-
-#cv{
-width:100%;
-min-height:auto;
-}
-
 }
