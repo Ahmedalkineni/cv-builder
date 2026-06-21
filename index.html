@@ -1,68 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CVify</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Builder</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="app">
+    <section class="panel form-panel">
+      <h1>منشئ سيرة ذاتية</h1>
 
-<div class="wrapper">
+      <div class="grid">
+        <label>الاسم الكامل
+          <input id="name" type="text" placeholder="مثال: أحمد الكنيني" />
+        </label>
 
-<div class="form-panel">
+        <label>المسمى الوظيفي
+          <input id="title" type="text" placeholder="مثال: مطور ويب" />
+        </label>
 
-<h2>CV Builder</h2>
+        <label class="full">الملخص الشخصي
+          <textarea id="summary" rows="4" placeholder="اكتب نبذة قصيرة عنك..."></textarea>
+        </label>
 
-<input id="name" placeholder="Full Name">
+        <label>رقم الهاتف
+          <input id="phone" type="text" placeholder="05xxxxxxxx" />
+        </label>
 
-<input id="title" placeholder="Job Title">
+        <label>البريد الإلكتروني
+          <input id="email" type="email" placeholder="name@email.com" />
+        </label>
 
-<input id="phone" placeholder="Phone">
+        <label>العنوان
+          <input id="location" type="text" placeholder="جدة، السعودية" />
+        </label>
 
-<input id="email" placeholder="Email">
+        <label class="full">الخبرة
+          <textarea id="experience" rows="4" placeholder="مثال: مطور واجهات - شركة ..."></textarea>
+        </label>
 
-<textarea id="summary"
-placeholder="Professional Summary"></textarea>
+        <label class="full">المهارات
+          <textarea id="skills" rows="3" placeholder="HTML, CSS, JavaScript, ..."></textarea>
+        </label>
 
-<button onclick="generateCV()">
-Generate CV
-</button>
+        <label class="full">التعليم
+          <textarea id="education" rows="3" placeholder="اسم الجهة، الدرجة، السنوات"></textarea>
+        </label>
+      </div>
+    </section>
 
-</div>
+    <section class="panel preview-panel">
+      <div class="cv">
+        <header class="cv-header">
+          <div>
+            <h2 id="cvName">Your Name</h2>
+            <p id="cvTitle">Job Title</p>
+          </div>
+          <div class="contact">
+            <p id="cvLocation">Jeddah, Saudi Arabia</p>
+            <p id="cvPhone">T: 05xxxxxxxx</p>
+            <p id="cvEmail">E: name@email.com</p>
+          </div>
+        </header>
 
-<div class="preview-panel">
+        <section>
+          <h3>PROFILE</h3>
+          <p id="cvSummary">
+            Write a short introduction about yourself, your strengths, and the role you are seeking.
+          </p>
+        </section>
 
-<div id="cv">
+        <section>
+          <h3>WORK EXPERIENCE</h3>
+          <p id="cvExperience">Add your work experience here.</p>
+        </section>
 
-<div class="header">
+        <section>
+          <h3>SKILLS</h3>
+          <p id="cvSkills">Add your professional skills here.</p>
+        </section>
 
-<div>
-<h1>Your Name</h1>
-<p>Job Title</p>
-</div>
+        <section>
+          <h3>EDUCATION</h3>
+          <p id="cvEducation">Add your education details here.</p>
+        </section>
+      </div>
+    </section>
+  </main>
 
-<div class="contact">
-<p>Phone</p>
-<p>Email</p>
-</div>
-
-</div>
-
-<hr>
-
-<h3>PERSONAL SUMMARY</h3>
-
-<p>Your summary will appear here...</p>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
